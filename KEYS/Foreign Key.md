@@ -93,19 +93,6 @@ VALUES (3, 999, '2024-05-03');
 
 It means that the **foreign key must match a valid primary key value** from the other table – this ensures your database is consistent and accurate.
 
-### Benefits of Referential Integrity:
-- Prevents orphaned records
-- Maintains data consistency
-- Enforces business rules at database level
-- Reduces application-level validation needs
-
-## 📊 Use Case Summary
-
-| Table Name | Key Type    | Purpose                      |
-|------------|-------------|------------------------------|
-| Customers  | Primary Key | Uniquely identifies customer |
-| Orders     | Foreign Key | Connects order to customer   |
-
 ## 🔄 Foreign Key Actions (Cascade Options)
 
 ### 1. `ON DELETE CASCADE`
@@ -184,62 +171,6 @@ UPDATE Customers SET CustomerID = 999 WHERE CustomerID = 101;
 ```
 ✅ Now, all orders where `CustomerID = 101` will be updated to `999`.
 
-## 🎯 Common Use Cases
-
-### 1. E-commerce System
-```sql
--- Products table
-CREATE TABLE Products (
-    ProductID INT PRIMARY KEY,
-    ProductName VARCHAR(100),
-    Price DECIMAL(10,2)
-);
-
--- Orders table
-CREATE TABLE Orders (
-    OrderID INT PRIMARY KEY,
-    CustomerID INT,
-    OrderDate DATE,
-    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
-);
-
--- Order details (many-to-many relationship)
-CREATE TABLE OrderDetails (
-    OrderID INT,
-    ProductID INT,
-    Quantity INT,
-    PRIMARY KEY (OrderID, ProductID),
-    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
-    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
-);
-```
-
-### 2. School Management System
-```sql
--- Students table
-CREATE TABLE Students (
-    StudentID INT PRIMARY KEY,
-    Name VARCHAR(100),
-    Email VARCHAR(100)
-);
-
--- Courses table
-CREATE TABLE Courses (
-    CourseID INT PRIMARY KEY,
-    CourseName VARCHAR(100),
-    Credits INT
-);
-
--- Enrollments table
-CREATE TABLE Enrollments (
-    StudentID INT,
-    CourseID INT,
-    Grade CHAR(2),
-    PRIMARY KEY (StudentID, CourseID),
-    FOREIGN KEY (StudentID) REFERENCES Students(StudentID),
-    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
-);
-```
 
 ## 🔍 Managing Foreign Keys
 
