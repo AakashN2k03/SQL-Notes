@@ -139,7 +139,7 @@ DELETE FROM Customers WHERE CustomerID = 101;
 
 ### 3. `ON DELETE RESTRICT` (default behavior)
 
-👉 Prevent the deletion of the parent row **if there is a matching child row**.
+👉 Prevent the deletion of the parent row **if there is a matching child row and Checked immediately before the delete**.
 
 ```sql
 -- This will cause an error if orders exist:
@@ -149,7 +149,7 @@ DELETE FROM Customers WHERE CustomerID = 101;
 
 ### 4. `ON DELETE NO ACTION`
 
-👉 **Do nothing** – deny deletion if child records exist (same as RESTRICT in most databases).
+👉 **Do nothing** – deny deletion if child records exist (same as RESTRICT in most databases and  **Checked after attempting the delete**)
 
 - ❌ The deletion is blocked (rejected).
 - ✅ No action is taken on the child table, and the deletion from the parent is not allowed.
