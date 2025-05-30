@@ -72,14 +72,6 @@ VALUES (NULL, 'Asha', 21);
 
 **🛑 Error:** Primary key column cannot be NULL.
 
-## 📝 Best Practices
-
-- Choose a column that will never change (like ID numbers)
-- Use simple data types (integers are preferred)
-- Keep primary keys as short as possible
-- Consider using auto-incrementing integers for surrogate keys
-- Avoid using business data as primary keys when possible
-
 ## 🔄 Adding/Removing Primary Keys
 
 ### Adding a primary key to an existing table:
@@ -96,13 +88,6 @@ ALTER TABLE Students
 DROP PRIMARY KEY;
 ```
 
-## 💡 Common Use Cases
-
-- **Student Management System:** StudentID as primary key
-- **Product Catalog:** ProductID as primary key
-- **User Authentication:** UserID as primary key
-- **Order Processing:** OrderID as primary key
-
 ## ⚠️ Important Notes
 
 - Every table should have a primary key for optimal database performance
@@ -112,4 +97,3 @@ DROP PRIMARY KEY;
 
 ---
 
-*This guide covers the fundamental concepts of primary keys in relational databases. Understanding primary keys is essential for proper database design and data integrity.*
