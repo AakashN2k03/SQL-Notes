@@ -151,6 +151,10 @@ DELETE FROM Customers WHERE CustomerID = 101;
 
 👉 **Do nothing** – deny deletion if child records exist (same as RESTRICT in most databases).
 
+- ❌ The deletion is blocked (rejected).
+- ✅ No action is taken on the child table, and the deletion from the parent is not allowed.
+    
+
 ### 5. `ON UPDATE CASCADE`
 
 👉 If the **primary key in the parent table is updated**, the **foreign key in the child table is also updated** automatically.
@@ -171,45 +175,11 @@ UPDATE Customers SET CustomerID = 999 WHERE CustomerID = 101;
 ```
 ✅ Now, all orders where `CustomerID = 101` will be updated to `999`.
 
-
-## 🔍 Managing Foreign Keys
-
-### View Foreign Key Constraints
-```sql
--- MySQL
-SELECT 
-    CONSTRAINT_NAME,
-    TABLE_NAME,
-    COLUMN_NAME,
-    REFERENCED_TABLE_NAME,
-    REFERENCED_COLUMN_NAME
-FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
-WHERE REFERENCED_TABLE_NAME IS NOT NULL;
-```
-
-### Drop Foreign Key Constraint
+### 🔍 Drop Foreign Key Constraint
 ```sql
 ALTER TABLE Orders 
 DROP FOREIGN KEY fk_customer;
 ```
-
-### Check Foreign Key Violations
-```sql
--- Find orders with invalid customer IDs
-SELECT o.* 
-FROM Orders o 
-LEFT JOIN Customers c ON o.CustomerID = c.CustomerID 
-WHERE c.CustomerID IS NULL AND o.CustomerID IS NOT NULL;
-```
-
-## 💡 Best Practices
-
-1. **Name constraints clearly** - Use descriptive names like `fk_orders_customer`
-2. **Choose appropriate cascade options** - Consider business requirements
-3. **Index foreign key columns** - Improves join performance
-4. **Validate data before insertion** - Prevent constraint violations
-5. **Document relationships** - Maintain clear ER diagrams
-6. **Consider performance impact** - Foreign keys add overhead to DML operations
 
 ## ⚠️ Important Notes
 
@@ -217,8 +187,6 @@ WHERE c.CustomerID IS NULL AND o.CustomerID IS NOT NULL;
 - Foreign keys can be **self-referencing** (point to same table)
 - **Multiple foreign keys** can exist in a single table
 - Foreign key constraints are **checked during INSERT, UPDATE, and DELETE** operations
-- **Circular references** should be avoided or handled carefully
-- Foreign keys help the query optimizer create better execution plans
 
 ## 🚀 Advanced Examples
 
