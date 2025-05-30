@@ -118,4 +118,43 @@ CREATE TABLE StudentGrades (
 
 | Feature | Primary Key | Composite Key |
 |---------|-------------|---------------|
-| **Columns involv
+| **Columns involved** | One (usually) | Two or more |
+| **Uniqueness basis** | Single column | Combination of columns |
+| **Example** | StudentID | (StudentID, CourseID) |
+| **Complexity** | Simple | More complex |
+| **Storage** | Less index space | More index space |
+| **Query performance** | Faster for single column | Slower for multi-column searches |
+
+## 💡 Best Practices
+
+1. **Keep it minimal** - Use the fewest columns necessary
+2. **Choose stable columns** - Avoid columns that change frequently
+3. **Consider performance** - More columns = larger indexes
+4. **Document relationships** - Clearly explain why the combination is unique
+5. **Use surrogate keys when appropriate** - Sometimes a single auto-increment ID is better
+
+## ⚠️ Important Considerations
+
+- **Index size**: Composite keys create larger indexes
+- **Foreign key references**: Other tables must reference all columns
+- **Query complexity**: Joins become more complex
+- **Application code**: More parameters needed for lookups
+
+## 🔍 Checking Composite Key Constraints
+
+### View existing composite key:
+```sql
+SHOW CREATE TABLE CourseRegistration;
+```
+
+### Check for duplicate combinations:
+```sql
+SELECT StudentID, CourseID, COUNT(*)
+FROM CourseRegistration
+GROUP BY StudentID, CourseID
+HAVING COUNT(*) > 1;
+```
+
+---
+
+*Composite keys are essential for maintaining data integrity in many-to-many relationships and ensuring business rule enforcement at the database level.*
