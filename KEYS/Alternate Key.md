@@ -81,7 +81,6 @@ CREATE TABLE Orders (
 1. **Natural Identifiers**: When you have multiple natural ways to identify records
 2. **Data Integrity**: To prevent duplicate entries on important fields
 3. **Query Performance**: Frequently searched columns benefit from unique constraints
-4. **Business Rules**: When business logic requires certain fields to be unique
 
 ## ⚠️ Important Considerations
 
@@ -89,15 +88,3 @@ CREATE TABLE Orders (
 - **Flexibility**: Choose your primary key carefully - alternate keys provide flexibility for future changes
 - **Referential Integrity**: Foreign keys typically reference primary keys, not alternate keys
 - **Database Design**: Good practice to identify all candidate keys during design phase
-
-## 🔧 Best Practices
-
-1. **Index alternate keys** for better query performance
-2. **Document your choice** of primary key vs alternate keys
-3. **Consider future requirements** when choosing which candidate key becomes primary
-4. **Use meaningful names** for constraints to aid debugging
-5. **Validate data** before insertion to ensure uniqueness
-
-## 📚 Summary
-
-Alternate keys are crucial for maintaining data integrity and providing multiple ways to uniquely identify records. They serve as backup identifiers and help enforce business rules while keeping your database design flexible and robust.
