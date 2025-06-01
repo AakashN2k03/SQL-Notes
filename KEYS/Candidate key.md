@@ -121,5 +121,5 @@ CREATE TABLE Students (
 
 ALTER TABLE Students 
 ADD CONSTRAINT uk_email UNIQUE (Email);
-
+```
 ### 📚 Remember: **Every table should have at least one candidate key**, and **one candidate key must be chosen as the primary key** to ensure proper database design.
