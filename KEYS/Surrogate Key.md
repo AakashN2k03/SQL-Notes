@@ -1,15 +1,5 @@
 # 🔑 Surrogate Key in Database Management Systems
 
-## Table of Contents
-- [What is a Surrogate Key?](#what-is-a-surrogate-key)
-- [Difference from Natural Key](#difference-from-natural-key)
-- [Real-Life Example](#real-life-example)
-- [SQL Implementation](#sql-implementation)
-- [Benefits of Using Surrogate Keys](#benefits-of-using-surrogate-keys)
-- [When NOT to Use Surrogate Keys](#when-not-to-use-surrogate-keys)
-- [Best Practices](#best-practices)
-- [Conclusion](#conclusion)
-
 ## 🔑 What is a **Surrogate Key**?
 
 A **Surrogate Key** is:
