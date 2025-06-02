@@ -1,14 +1,5 @@
 # 🔑 Super Key in Database Management Systems
 
-## Table of Contents
-- [What is a Super Key?](#what-is-a-super-key)
-- [Real-Life Analogy](#real-life-analogy)
-- [Table Example](#table-example)
-- [Key Types Summary](#key-types-summary)
-- [SQL Schema Example](#sql-schema-example)
-- [Difference Between Candidate Key and Super Key](#difference-between-candidate-key-and-super-key)
-- [Conclusion](#conclusion)
-
 ## 🔑 What is a **Super Key**?
 
 A **Super Key** is any **set of one or more columns** that can **uniquely identify** a row in a table.
