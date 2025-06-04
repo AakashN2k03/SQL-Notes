@@ -49,16 +49,3 @@ Before diving into normal forms, here are some fundamental concepts:
 | ↪️ **Transitive Dependency** | When a non-key attribute depends on another non-key attribute.                              |
 
 ---
-
-## 📚 Summary
-
-Normalization is essential for:
-
-- Reducing data duplication  
-- Preventing data anomalies  
-- Improving database performance and integrity  
-- Designing scalable and maintainable databases
-
----
-
-If you'd like me to help with examples of normalization or SQL queries, just ask! 😊
