@@ -1,23 +1,5 @@
 # 📘 Partial Dependency in Database Management Systems (DBMS)
 
-## Table of Contents
-- [Overview](#overview)
-- [Definition](#definition)
-- [Prerequisites](#prerequisites)
-- [When Partial Dependencies Occur](#when-partial-dependencies-occur)
-- [Example Demonstration](#example-demonstration)
-- [Problems Caused](#problems-caused)
-- [Solution](#solution)
-- [Implementation Guide](#implementation-guide)
-- [Best Practices](#best-practices)
-- [Related Concepts](#related-concepts)
-
-## Overview
-
-This documentation provides a comprehensive guide to understanding **Partial Dependency** in Database Management Systems, a crucial concept in database normalization that helps identify and resolve data redundancy issues.
-
-## Definition
-
 **Partial Dependency** occurs when a **non-prime attribute** (an attribute that is not part of any candidate key) is **functionally dependent on only part of a candidate key**, rather than the entire candidate key.
 
 ### Key Terms:
