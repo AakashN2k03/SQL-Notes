@@ -26,14 +26,6 @@ Here, the `Courses` column contains **multiple values**. This violates **1NF**.
 * Now, each field holds **atomic values only**.
 * The table satisfies **1NF**.
 
-## 💡 Key Points:
-
-| Rule | Explanation |
-|------|-------------|
-| Atomic values | No multiple values or lists in one column |
-| Same data type in a column | No mixing of text, numbers, etc. |
-| Unique records (PK) | Every row must be uniquely identifiable |
-
 ## 🎯 Why 1NF is important:
 * Ensures data consistency.
 * Removes multi-valued attributes.
